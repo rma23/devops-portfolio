@@ -79,47 +79,19 @@ resource "aws_iam_role_policy" "github_actions" {
     Version = "2012-10-17"
 
     Statement = [
-
-      {
-
-        Effect = "Allow"
-
-        Action = [
-          "ecr:GetAuthorizationToken"
-        ]
-
-        Resource = "*"
-
-      },
-
-
       {
         Effect = "Allow"
 
         Action = [
-
-
+          "ecr:GetAuthorizationToken",
           "ecr:BatchCheckLayerAvailability",
-
           "ecr:CompleteLayerUpload",
-
           "ecr:InitiateLayerUpload",
-
           "ecr:PutImage",
-
-          "ecr:UploadLayerPart"
-
-
-        ]
-
-        Resource = "*"
-      },
-
-      {
-        Effect = "Allow"
-
-        Action = [
-          "eks:DescribeCluster"
+          "ecr:UploadLayerPart",
+          "ecr:BatchGetImage",
+          "ecr:GetDownloadUrlForLayer",
+          "eks:DescribeCluster"	  
         ]
 
         Resource = "*"
