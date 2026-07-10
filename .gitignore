@@ -1,0 +1,61 @@
+# ==========================
+# Terraform
+# ==========================
+.terraform/
+**/.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Ignore local variable files (credentials, secrets)
+terraform.tfvars
+terraform.tfvars.json
+*.auto.tfvars
+*.auto.tfvars.json
+
+# Keep the provider lock file in Git
+# .terraform.lock.hcl
+
+# ==========================
+# Environment
+# ==========================
+.env
+.env.*
+
+# ==========================
+# Kubernetes
+# ==========================
+*.kubeconfig
+kubeconfig
+
+# ==========================
+# Logs
+# ==========================
+*.log
+
+# ==========================
+# IDE
+# ==========================
+.vscode/
+.idea/
+
+# ==========================
+# OS
+# ==========================
+.DS_Store
+Thumbs.db
+
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# ==========================
+# Node.js (if used)
+# ==========================
+node_modules/
