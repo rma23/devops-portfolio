@@ -51,9 +51,17 @@ jobs:
         --region $AWS_REGION \
         --name $CLUSTER_NAME
 
+    - name: Inject image into deployment manifest
+      run: |
+        sed -i "s|YOUR_DOCKER_IMAGE|${{ secrets.ECR_URL }}/$ECR_REPOSITORY:${{ github.sha }}|g" k8s/deployment.yaml
+  
     - name: Deploy Kubernetes
       run: |
-        kubectl set image deployment/demo-app \
-        app=${{ secrets.ECR_URL }}/$ECR_REPOSITORY:${{ github.sha }} \
-        -n portfolio
+        kubectl apply -f k8s/
+        
+#     - name: Deploy Kubernetes
+#       run: |
+#         kubectl set image deployment/demo-app \
+#         app=${{ secrets.ECR_URL }}/$ECR_REPOSITORY:${{ github.sha }} \
+#         -n portfolio
 
