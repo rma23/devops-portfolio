@@ -425,7 +425,7 @@ Example response:
 ```json
 {
   "message": "Hello from EKS!",
-  "hostname": "portfolio-7d8f9f5d7c-abcde"
+  "hostname": "<pod-name>"
 }
 ```
 
