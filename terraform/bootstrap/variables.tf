@@ -13,5 +13,6 @@ variable "lock_table_name" {
 variable "environment" {
   description = "Environment name"
   type = string
+  default = "dev"
 }
 

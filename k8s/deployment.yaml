@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: YOUR_DOCKER_IMAGE
+        image: 300109755710.dkr.ecr.ap-northeast-1.amazonaws.com/devops-portfolio-app:latest
         ports:
         - containerPort: 3000
         resources:
